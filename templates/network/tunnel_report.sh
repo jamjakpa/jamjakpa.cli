@@ -19,3 +19,5 @@ else
   echo "rpi is offline, was $prevStatus"
   echo "offline" > /tmp/prev_ssh_status
 fi
+
+sync;sync;sync
