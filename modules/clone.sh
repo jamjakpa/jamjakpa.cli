@@ -1,5 +1,6 @@
+#!/bin/bash
 
-function clone(){ 
+function clone {
     a=$(fdisk -l |grep /dev/mmcblk0: | grep -P '\d+ (?=bytes)' -o)
     #echo "$a - /dev/mmcblk0"
 
@@ -29,7 +30,7 @@ function clone(){
 
 }
 
-function clone_help(){
+function clone_help {
   echo ""
   echo "Usage: $(basename "$0")"
   echo ""
