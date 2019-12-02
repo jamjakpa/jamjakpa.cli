@@ -1,0 +1,31 @@
+#!/bin/bash
+
+treehouses rename treehouses
+treehouses expandfs
+treehouses button bluetooth
+
+#treehouses wifi <wifiname> [password]
+#treehouses ap internet <hotspotname> [password]
+treehouses ap internet treehouses
+#treehouses ap local <hotspotname> [password]
+#treehouses bridge <wifiname> <hotspotname> [wifipassword] [hotspotpassword]
+
+#have internet and wanna latest planet? - please uncomment
+#docker pull treehouses/planet:latest
+#docker pull treeohuses/planet:db-init
+#docker tag treehouses/planet:latest treehouses/planet:local
+#docker tag treehouses/planet:db-init treehouses/planet:db-init-local
+
+{
+  echo "#!/bin/sh"
+  echo
+  echo "sleep 1"
+  echo
+  echo "docker-compose -f /boot/kolibri.yml -p kolibri up -d"
+} > /boot/autorun
+
+mv /srv/irbilok /srv/kolibri
+
+sync;sync;sync
+
+docker-compose -f /boot/kolibri.yml -p kolibri up -d
