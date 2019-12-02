@@ -20,28 +20,24 @@ treehouses tor add 8080
 
 # create kolibri.yml
 mkdir -p /srv/kolibri
-# cd /srv/kolibri
-
 {
   echo "services:"
   echo "  kolibri:"
-  echo "    image: treehouses/kolibri"
+  echo "    image: \"treehouses/kolibri\""
   echo "    ports:"
-  echo "      - '8080:8080'"
+  echo "      - \"8080:8080\""
   echo "    volumes:"
-  echo "      - '/srv/kolibri:/root/.kolibri'"
-  echo "version: '2'"
+  echo "      - \"/srv/kolibri:/root/.kolibri\""
+  echo "version: \"2\""
 } > /srv/kolibri/kolibri.yml
 
-# {
-#   echo "#!/bin/sh"
-#   echo
-#   echo "sleep 1"
-#   echo
-#   echo "docker-compose -f /srv/kolibri/kolibri.yml -p kolibri up -d"
-# } > /boot/autorun
-
-# mv /srv/irbilok /srv/kolibri
+{
+  echo "#!/bin/bash"
+  echo
+  echo "sleep 1"
+  echo
+  echo "docker-compose -f /srv/kolibri/kolibri.yml -p kolibri up -d"
+} > /boot/autorun
 
 sync;sync;sync
 
