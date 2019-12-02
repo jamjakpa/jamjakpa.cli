@@ -1,20 +1,10 @@
 #!/bin/bash
 
-# treehouses rename treehouses
-# treehouses expandfs
-# treehouses button bluetooth
-
 #treehouses wifi <wifiname> [password]
 #treehouses ap internet <hotspotname> [password]
 #treehouses ap internet treehouses
 #treehouses ap local <hotspotname> [password]
 #treehouses bridge <wifiname> <hotspotname> [wifipassword] [hotspotpassword]
-
-#have internet and wanna latest planet? - please uncomment
-#docker pull treehouses/planet:latest
-#docker pull treeohuses/planet:db-init
-#docker tag treehouses/planet:latest treehouses/planet:local
-#docker tag treehouses/planet:db-init treehouses/planet:db-init-local
 
 treehouses tor add 8080
 
@@ -31,6 +21,7 @@ mkdir -p /srv/kolibri
   echo "version: \"2\""
 } > /srv/kolibri/kolibri.yml
 
+# create autorun
 {
   echo "#!/bin/bash"
   echo
