@@ -1,8 +1,8 @@
 #!/bin/bash
 
-treehouses rename treehouses
-treehouses expandfs
-treehouses button bluetooth
+# treehouses rename treehouses
+# treehouses expandfs
+# treehouses button bluetooth
 
 #treehouses wifi <wifiname> [password]
 #treehouses ap internet <hotspotname> [password]
