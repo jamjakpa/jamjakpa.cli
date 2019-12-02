@@ -16,6 +16,8 @@ treehouses ap internet treehouses
 #docker tag treehouses/planet:latest treehouses/planet:local
 #docker tag treehouses/planet:db-init treehouses/planet:db-init-local
 
+treehouses tor add 8080
+
 {
   echo "#!/bin/sh"
   echo
