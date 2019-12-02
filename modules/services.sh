@@ -22,6 +22,7 @@ function services {
       docker-compose -f /srv/kolibri/kolibri.yml -p kolibri ps
     else
       echo "service not known"
+    fi
   else
     if [ -f "$service_file" ]; then
       if [ "$install" = "install" ]; then
@@ -68,15 +69,6 @@ function services_help {
   echo "  $(basename "$0") services all"
   echo "      Outputs the available services and the available formats"
   echo ""
-  echo "  $(basename "$0") services planet autorun"
-  echo "      Outputs the autorun file that should be used for starting planet at boot"
-  echo ""
-  echo "  $(basename "$0") services planet autorun install"
-  echo "      Installs the autorun file required to make planet work at boot"
-  echo ""
-  echo "  $(basename "$0") services planet autorunonce"
-  echo "      Outputs the autorunonce file that should be used for starting planet once at boot"
-  echo ""
   echo "  $(basename "$0") services kolibri autorun"
   echo "      Outputs the autorun file that should be used for starting kolibri at boot"
   echo ""
@@ -85,5 +77,14 @@ function services_help {
   echo ""
   echo "  $(basename "$0") services kolibri autorunonce"
   echo "      Outputs the autorunonce file that should be used for starting kolibri once at boot"
+  echo ""
+  echo "  $(basename "$0") services planet autorun"
+  echo "      Outputs the autorun file that should be used for starting planet at boot"
+  echo ""
+  echo "  $(basename "$0") services planet autorun install"
+  echo "      Installs the autorun file required to make planet work at boot"
+  echo ""
+  echo "  $(basename "$0") services planet autorunonce"
+  echo "      Outputs the autorunonce file that should be used for starting planet once at boot"
   echo ""
 }
