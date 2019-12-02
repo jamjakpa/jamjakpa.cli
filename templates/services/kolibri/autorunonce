@@ -6,7 +6,7 @@ treehouses button bluetooth
 
 #treehouses wifi <wifiname> [password]
 #treehouses ap internet <hotspotname> [password]
-treehouses ap internet treehouses
+#treehouses ap internet treehouses
 #treehouses ap local <hotspotname> [password]
 #treehouses bridge <wifiname> <hotspotname> [wifipassword] [hotspotpassword]
 
@@ -23,7 +23,7 @@ mkdir -p /srv/kolibri
 {
   echo "services:"
   echo "  kolibri:"
-  echo "    image: \"treehouses/kolibri\""
+  echo "    image: treehouses/kolibri"
   echo "    ports:"
   echo "      - \"8080:8080\""
   echo "    volumes:"
