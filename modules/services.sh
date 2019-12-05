@@ -16,13 +16,25 @@ function services {
   elif [ "$output" = "docker" ]; then
     docker images | grep "$service_name"
   elif [ "$output" = "docker-compose" ]; then
-    if [ "$service_name" = "planet" ]; then
-      docker-compose -f /srv/planet/planet.yml -f /srv/planet/volumes.yml -p planet ps
-    elif [ "$service_name" = "kolibri" ]; then
-      docker-compose -f /srv/kolibri/kolibri.yml -p kolibri ps
-    else
-      echo "service not known"
-    fi
+    # if [ "$service_name" = "planet" ]; then
+    #   docker-compose -f /srv/planet/planet.yml -f /srv/planet/volumes.yml -p planet ps
+    # elif [ "$service_name" = "kolibri" ]; then
+    #   docker-compose -f /srv/kolibri/kolibri.yml -p kolibri ps
+    # else
+    #   echo "service not known"
+    # fi
+
+    case "$service_name" in
+      planet)
+        docker-compose -f /srv/planet/planet.yml -f /srv/planet/volumes.yml -p planet ps
+        ;;
+      kolibri)
+        docker-compose -f /srv/kolibri/kolibri.yml -p kolibri ps
+        ;;
+      *)
+        echo "service not known"
+        ;;
+    esac
   else
     if [ -f "$service_file" ]; then
       if [ "$install" = "install" ]; then
