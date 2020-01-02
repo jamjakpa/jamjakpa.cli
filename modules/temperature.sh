@@ -18,6 +18,13 @@ function temperature () {
     "celsius") 
       echo $number"°C"
       ;;
+    "both")
+      echo $number"°C"
+      fraction=$(echo "scale=1; 9.0/5.0" | bc)
+      resultA=$(echo "$number*$fraction" | bc)
+      resultB=$(echo "$resultA+32" | bc)
+      echo $resultB"°F"
+      ;;
   esac
 }
 
@@ -38,5 +45,9 @@ function temperature_help {
   echo ""
   echo "  $(basename "$0") temperature fahrenheit"
   echo ""
-  echo "  117.0°F"  
+  echo "  117.0°F"
+  echo "  $(basename "$0") temperature both"
+  echo ""
+  echo "  47.2°C"
+  echo "  117.0°F"
 }
